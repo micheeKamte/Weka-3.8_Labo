@@ -13,7 +13,7 @@ Clean:
 Test:
   stage: Test
   dependencies:
-    - build
+    - Clean
   script:
     - mvn $MAVEN_CLI_OPTS test
   artifacts:
@@ -25,7 +25,4 @@ Packet:
     - Test
   script:
     - mvn $MAVEN_CLI_OPTS package
-
-only:
-  - master
 
