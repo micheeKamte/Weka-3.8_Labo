@@ -1,0 +1,17 @@
+image: java:latest
+
+before_script:
+  - composer install
+
+java:
+  stage: test
+
+  script:
+    - gradle test
+
+  artifacts:
+    reports:
+      junit: build/test-results/test/TEST-*.xml
+
+only:
+  - master
