@@ -1,21 +1,31 @@
-image: node:latest
+image: maven:latest
 
-stages:
-  - build
-  - test
+stages: 
+  - Clean
+  - Test
+  - Packet
 
-cache:
-  paths:
-    - node_modules/
-
-install_dependencies:
-  stage: build
+Clean: 
+  stage: Clean
   script:
-    - npm install
+    - mvn $MAVEN_CLI_OPTS clean compile
+  
+Test:
+  stage: Test
+  dependencies:
+    - build
+  script:
+    - mvn $MAVEN_CLI_OPTS test
   artifacts:
-    paths:
-      - node_modules/
+    when: on_success
 
-test_with_lab:
-  stage: test
-  script: npm test
+Packet:
+  stage: Packet
+  dependencies:
+    - Test
+  script:
+    - mvn $MAVEN_CLI_OPTS package
+
+only:
+  - master
+
