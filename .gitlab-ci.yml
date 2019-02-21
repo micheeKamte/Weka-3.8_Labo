@@ -12,6 +12,3 @@ java:
   artifacts:
     reports:
       junit: build/test-results/test/TEST-*.xml
-
-only:
-  - master
