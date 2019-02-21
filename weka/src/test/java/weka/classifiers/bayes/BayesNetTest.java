@@ -42,7 +42,7 @@ public class BayesNetTest extends AbstractClassifierTest {
   }
 
   public static Test suite() {
-    //return new TestSuite(BayesNetTest.class);
+    return new TestSuite(BayesNetTest.class);
   }
 
   public static void main(String[] args){
