@@ -1,21 +1,10 @@
-image: node:latest
+image: java:latest
 
-stages:
-  - build
-  - test
+before_script:
+  - composer install
 
-cache:
-  paths:
-    - node_modules/
-
-install_dependencies:
-  stage: build
-  script:
-    - npm install
-  artifacts:
-    paths:
-      - node_modules/
-
-test_with_lab:
+java:
   stage: test
-  script: npm test
+
+  script:
+    - gradle test --tests /weka/src/test/java/weka/associations/AbstractAssociatorTest
