@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CanopyTest",
+            "request": "launch",
+            "mainClass": "weka.clusterers.CanopyTest",
+            "projectName": "weka-stable"
+        }
+    ]
+}
