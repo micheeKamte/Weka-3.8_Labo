@@ -1,5 +1,11 @@
 image: maven:latest
 
+variables:
+  projet: "Weka-3.8_Labo"
+
+before_script:
+  - "cd $projet"
+
 stages: 
   - Clean
   - Test
