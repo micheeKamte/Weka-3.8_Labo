@@ -45,7 +45,7 @@ public class CanopyTest
   }
 
   public static Test suite() {
-    return new TestSuite(CanopyTest.class);
+    //return new TestSuite(CanopyTest.class);
   }
 
   public static void main(String[] args){
