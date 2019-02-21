@@ -1,7 +1,7 @@
 image: java:latest
 
-before_script:
-  - composer install
+stage:
+  - test
 
 java:
   stage: test
